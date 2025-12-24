@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Flame, Flower2, ScrollText, CheckCircle2 } from "lucide-react";
 import SearchWidget from "@/components/SearchWidget";
 import MobileNav from "@/components/MobileNav";
@@ -53,9 +54,15 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex -space-x-2">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="h-8 w-8 rounded-full border-2 border-background bg-muted" />
-                      ))}
+                      <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
+                        <Image src="/avatar-1.png" alt="Trusted User" fill className="object-cover" />
+                      </div>
+                      <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
+                        <Image src="/avatar-2.png" alt="Trusted User" fill className="object-cover" />
+                      </div>
+                      <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
+                        <Image src="/avatar-3.png" alt="Trusted User" fill className="object-cover" />
+                      </div>
                     </div>
                     <p>Trusted by 10,000+ families</p>
                   </div>
