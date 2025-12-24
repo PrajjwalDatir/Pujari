@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
 import { Search, MapPin, Sparkles } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -44,11 +45,14 @@ export default function SearchWidget() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
+    
     // Simulate API call
-    console.log(values);
     setTimeout(() => {
       setIsSubmitting(false);
-      alert("Searching for verified Pujaris...");
+      toast.success("Matching you with verified Pujaris...", {
+        description: `Finding ${values.lookingFor === "pujari" ? "Pujaris" : "Astrologers"} for ${values.ritualType} in ${values.location}`,
+        duration: 4000,
+      });
     }, 1500);
   };
 

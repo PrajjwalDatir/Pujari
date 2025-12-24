@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Flame, Flower2, ScrollText, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Flame, Flower2, ScrollText, CheckCircle2 } from "lucide-react";
 import SearchWidget from "@/components/SearchWidget";
+import MobileNav from "@/components/MobileNav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -15,13 +16,16 @@ export default function Home() {
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">Services</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Rituals</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Astrology</Link>
+            <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
+            <Link href="#rituals" className="hover:text-primary transition-colors">Rituals</Link>
+            <Link href="#astrology" className="hover:text-primary transition-colors">Astrology</Link>
           </nav>
-          <Button variant="ghost" className="hidden md:inline-flex text-primary hover:text-primary/90 hover:bg-primary/10">
-            For Pujaris
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" className="hidden md:inline-flex text-primary hover:text-primary/90 hover:bg-primary/10">
+              For Pujaris
+            </Button>
+            <MobileNav />
+          </div>
         </div>
       </header>
 
