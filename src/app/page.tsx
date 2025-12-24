@@ -52,7 +52,7 @@ export default function Home() {
           </ShapeLandingHero>
 
           {/* Mission Strip */}
-          <section className="py-32 border-y border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden">
+          <section className="py-20 border-y border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden">
             <div className="absolute inset-0 bg-primary/5 -skew-y-3 scale-110" />
             <div className="container relative mx-auto px-4 text-center">
               <blockquote className="text-3xl md:text-5xl font-light italic leading-relaxed max-w-5xl mx-auto">
@@ -62,7 +62,7 @@ export default function Home() {
           </section>
 
           {/* Services Grid */}
-          <section id="services" className="py-40 container mx-auto px-4 relative">
+          <section id="services" className="py-20 container mx-auto px-4 relative">
             <SectionHeading 
               badge="Divine Path"
               title="Services for Every Milestone"
@@ -137,7 +137,7 @@ export default function Home() {
           </section>
 
           {/* Trust Section */}
-          <section className="py-40 bg-primary/5 relative overflow-hidden">
+          <section className="py-20 bg-primary/5 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
             <div className="container mx-auto px-4 relative z-10 space-y-24">
               <SectionHeading 

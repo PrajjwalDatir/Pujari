@@ -18,7 +18,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={cn(
-      "mb-20 space-y-6",
+      "mb-12 space-y-6",
       align === "center" ? "text-center" : "text-left",
       className
     )}>

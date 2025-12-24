@@ -74,7 +74,7 @@ export default function PujarisClient() {
           </ShapeLandingHero>
 
           {/* Live Demand Section */}
-          <section className="py-32 relative overflow-hidden">
+          <section className="py-20 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
               <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div className="space-y-4 text-left">
@@ -117,7 +117,7 @@ export default function PujarisClient() {
           </section>
 
           {/* Benefits Grid */}
-          <section className="py-40 bg-primary/5 relative overflow-hidden">
+          <section className="py-20 bg-primary/5 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
             <div className="container mx-auto px-4 relative z-10">
               <SectionHeading 

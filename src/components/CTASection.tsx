@@ -25,7 +25,7 @@ export default function CTASection({
   className
 }: CTASectionProps) {
   return (
-    <section className={cn("py-40 container mx-auto px-4 text-center", className)}>
+    <section className={cn("py-20 container mx-auto px-4 text-center", className)}>
       <LiquidGlassCard gradient={false} className="p-0 border-none bg-transparent">
         <div className="rounded-[3rem] bg-primary px-12 py-24 text-center text-primary-foreground relative overflow-hidden">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[30rem] h-[30rem] bg-white/10 rounded-full blur-[100px]" />
