@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Rituals", href: "#rituals" },
-  { label: "Astrology", href: "#astrology" },
+  { label: "Services", href: "/#services" },
+  { label: "Rituals", href: "/#rituals" },
+  { label: "Astrology", href: "/#astrology" },
 ];
 
 export default function MobileNav() {
@@ -42,6 +42,7 @@ export default function MobileNav() {
               <Link
                 href={link.href}
                 className="text-lg font-medium py-2 px-4 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
               >
                 {link.label}
               </Link>
@@ -49,9 +50,11 @@ export default function MobileNav() {
           ))}
           <div className="border-t border-border pt-4 mt-4">
             <SheetClose asChild>
-              <Button className="w-full" variant="default">
-                For Pujaris
-              </Button>
+              <Link href="/pujaris" onClick={() => setOpen(false)}>
+                <Button className="w-full" variant="default">
+                  For Pujaris
+                </Button>
+              </Link>
             </SheetClose>
           </div>
         </nav>

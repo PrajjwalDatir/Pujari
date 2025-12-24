@@ -9,27 +9,6 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-foreground selection:bg-primary/20">
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tighter bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
-              Pujari
-            </span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-            <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
-            <Link href="#rituals" className="hover:text-primary transition-colors">Rituals</Link>
-            <Link href="#astrology" className="hover:text-primary transition-colors">Astrology</Link>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" className="hidden md:inline-flex text-primary hover:text-primary/90 hover:bg-primary/10">
-              For Pujaris
-            </Button>
-            <MobileNav />
-          </div>
-        </div>
-      </header>
-
       <main className="flex-1 pt-16">
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-20 pb-32 lg:pt-32">
@@ -89,7 +68,7 @@ export default function Home() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-24 container mx-auto px-4">
+        <section id="services" className="py-24 container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-3xl font-bold tracking-tight">Our Offerings</h2>
             <p className="text-muted-foreground">Comprehensive spiritual services for every stage of life.</p>
@@ -98,6 +77,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
+                id: "rituals",
                 icon: <Flame size={32} strokeWidth={1.5} />,
                 title: "Vedic Rituals",
                 desc: "Authentic Pujas and Homas performed by strict Vedic standards."
@@ -108,12 +88,13 @@ export default function Home() {
                 desc: "Essential life-cycle rites from birth to initiation."
               },
               {
+                id: "astrology",
                 icon: <ScrollText size={32} strokeWidth={1.5} />,
                 title: "Consultations",
                 desc: "Astrological guidance and spiritual counseling from learned Acharyas."
               }
             ].map((service, i) => (
-              <Card key={i} className="group hover:-translate-y-1 transition-all duration-300 border-border/50 bg-white/5">
+              <Card key={i} id={service.id} className="group hover:-translate-y-1 transition-all duration-300 border-border/50 bg-white/5 scroll-mt-24">
                 <CardContent className="p-8 text-center space-y-4">
                   <div className="inline-flex p-4 rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                     {service.icon}
