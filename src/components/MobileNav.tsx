@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
   Sheet,
   SheetContent,
@@ -21,6 +22,7 @@ const navLinks = [
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -48,15 +50,17 @@ export default function MobileNav() {
               </Link>
             </SheetClose>
           ))}
-          <div className="border-t border-border pt-4 mt-4">
-            <SheetClose asChild>
-              <Link href="/pujaris" onClick={() => setOpen(false)} prefetch={false}>
-                <Button className="w-full" variant="default">
-                  For Pujaris
-                </Button>
-              </Link>
-            </SheetClose>
-          </div>
+          {pathname !== "/pujaris" && (
+            <div className="border-t border-border pt-4 mt-4">
+              <SheetClose asChild>
+                <Link href="/pujaris" onClick={() => setOpen(false)} prefetch={false}>
+                  <Button className="w-full" variant="default">
+                    For Pujaris
+                  </Button>
+                </Link>
+              </SheetClose>
+            </div>
+          )}
         </nav>
       </SheetContent>
     </Sheet>

@@ -12,12 +12,17 @@ import {
   ArrowRight,
   Zap
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import BeamsBackground from "@/components/kokonutui/beams-background";
+import ShapeLandingHero from "@/components/kokonutui/shape-landing-hero";
+import LiquidGlassCard from "@/components/kokonutui/liquid-glass-card";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
+import CTASection from "@/components/CTASection";
 
 const astrologyServices = [
   {
@@ -58,187 +63,137 @@ export default function AstrologyClient() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background font-sans text-foreground selection:bg-primary/20">
-      <main className="flex-1 pt-16">
-        {/* Astrology Hero */}
-        <section className="relative overflow-hidden pt-20 pb-32 lg:pt-32">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-          
-          {/* Animated Stars background would go here */}
-          <div className="container relative mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary py-1 px-4 text-sm">
-                Navigating the Stars since the Vedic Era
-              </Badge>
-              
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-                Master your <span className="text-primary">Karma</span>.<br />
-                Follow your <span className="text-primary">Dharma</span>.
-              </h1>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Jyotish is the &quot;Eye of the Veda.&quot; Connect with legacy-holding Vedic Astrologers to illuminate your path through precise cosmic calculations.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <div className="min-h-screen flex flex-col bg-background font-sans text-foreground selection:bg-primary/20 overflow-x-hidden">
+      <BeamsBackground className="flex-1">
+        <main className="flex-1">
+          {/* Astrology Hero */}
+          <ShapeLandingHero
+            badge="Navigating the Stars since the Vedic Era"
+            title={<>Master your <span className="text-primary italic">Karma</span>.<br />Follow your <span className="text-primary italic">Dharma</span>.</>}
+            subtitle="Jyotish is the 'Eye of the Veda.' Connect with legacy-holding Vedic Astrologers to illuminate your path through precise cosmic calculations."
+          >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 h-14 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 group"
+                onClick={() => handleConsult("Premium Consultation")}
+              >
+                Book Expert Consultation
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Link href="/#rituals">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 h-14 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 group"
-                  onClick={() => handleConsult("Premium Consultation")}
+                  variant="outline" 
+                  className="text-lg px-8 h-14 border-primary/20 hover:bg-primary/5 w-full"
                 >
-                  Book Expert Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  Explore Remedies
                 </Button>
-                <Link href="/#rituals">
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="text-lg px-8 h-14 border-primary/20 hover:bg-primary/5 w-full"
-                  >
-                    Explore Remedies
-                  </Button>
-                </Link>
-              </div>
+              </Link>
             </div>
-          </div>
-        </section>
+          </ShapeLandingHero>
 
-        {/* Detailed Services Grid */}
-        <section className="py-24 bg-muted/30 relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Our Specialized Consultations</h2>
-              <p className="text-muted-foreground">Precision-based insights for life&apos;s most critical decisions.</p>
-            </div>
+          {/* Detailed Services Grid */}
+          <section className="py-40 relative">
+            <div className="container mx-auto px-4">
+              <SectionHeading 
+                badge="Precision Jyotish"
+                title="Specialized Consultations"
+                subtitle="Precision-based insights for life's most critical decisions."
+              />
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {astrologyServices.map((service, i) => (
-                <Card key={i} className="bg-background/50 border-primary/10 hover:border-primary/30 transition-all group overflow-hidden">
-                  <div className="grid sm:grid-cols-5 h-full">
-                    <div className="sm:col-span-2 bg-primary/5 p-8 flex flex-col justify-center items-center text-center space-y-4">
-                      {service.icon}
-                      <h3 className="text-xl font-bold">{service.title}</h3>
-                      <Badge variant="secondary" className="px-2 py-0 text-[10px] uppercase">Vedic Standard</Badge>
+              <div className="grid md:grid-cols-2 gap-8">
+                {astrologyServices.map((service, i) => (
+                  <LiquidGlassCard key={i} className="p-0 overflow-hidden">
+                    <div className="grid sm:grid-cols-5 h-full">
+                      <div className="sm:col-span-2 bg-primary/5 p-10 flex flex-col justify-center items-center text-center space-y-6">
+                        <div className="p-5 rounded-3xl bg-white/10 text-primary">
+                          {service.icon}
+                        </div>
+                        <h3 className="text-2xl font-bold tracking-tight">{service.title}</h3>
+                        <Badge variant="secondary" className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-primary">Vedic Standard</Badge>
+                      </div>
+                      <div className="sm:col-span-3 p-10 space-y-8 flex flex-col">
+                        <p className="text-lg text-muted-foreground leading-relaxed flex-1">
+                          {service.desc}
+                        </p>
+                        <ul className="space-y-4">
+                          {service.benefits.map((benefit, idx) => (
+                            <li key={idx} className="flex items-center gap-3 text-sm font-medium text-muted-foreground/80">
+                              <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button 
+                          variant="default" 
+                          className="w-full h-12 shadow-lg shadow-primary/20 group/btn"
+                          onClick={() => handleConsult(service.title)}
+                        >
+                          Book This Session
+                          <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </div>
                     </div>
-                    <div className="sm:col-span-3 p-8 space-y-6">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {service.desc}
-                      </p>
-                      <ul className="space-y-3">
-                        {service.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <CheckCircle2 size={16} className="text-primary" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                      <Button 
-                        variant="link" 
-                        className="p-0 h-auto text-primary font-semibold hover:no-underline group/link"
-                        onClick={() => handleConsult(service.title)}
-                      >
-                        Book This Session
-                        <ArrowRight size={14} className="ml-1 group-hover/link:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Methodology Section */}
-        <section className="py-24 container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Ancient Math meets Modern Clarity.</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We don&apos;t practice &quot;generic&quot; horoscopes. Our experts use Parashari and Jaimini systems to calculate planetary placements to the exact degree. Every consultation is:
-              </p>
-              <div className="space-y-6">
-                {[
-                  { title: "Time-Sensitive", desc: "Calculations based on the exact second of birth and geographical coordinates." },
-                  { title: "Remedial-Led", desc: "We don't just predict; we provide actionable solutions through Vedic rituals." },
-                  { title: "Verified Lineage", desc: "Consult only with Acharyas from recognized Gurukuls and traditions." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="h-10 w-10 shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                      <Zap size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </div>
+                  </LiquidGlassCard>
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square rounded-full border-4 border-dashed border-primary/20 animate-[spin_60s_linear_infinite] absolute inset-0" />
-              <div className="aspect-square rounded-3xl bg-primary/5 flex items-center justify-center relative z-10 overflow-hidden">
-                {/* Spiritual geometric pattern would go here */}
-                <Compass size={120} className="text-primary/20" />
+          </section>
+
+          {/* Methodology Section */}
+          <section className="py-40 bg-primary/5 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <div className="space-y-12">
+                  <SectionHeading 
+                    badge="Science of Spirit"
+                    title={<>Ancient Math.<br />Modern Clarity.</>}
+                    subtitle="We don't practice generic horoscopes. Our experts use Parashari and Jaimini systems to calculate planetary placements to the exact degree."
+                    align="left"
+                    className="mb-12"
+                  />
+                  <div className="space-y-8">
+                    {[
+                      { title: "Time-Sensitive", desc: "Calculations based on the exact second of birth and geographical coordinates." },
+                      { title: "Remedial-Led", desc: "We don't just predict; we provide actionable solutions through Vedic rituals." },
+                      { title: "Verified Lineage", desc: "Consult only with Acharyas from recognized Gurukuls and traditions." }
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-6 items-start">
+                        <div className="h-12 w-12 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                          <Zap size={24} />
+                        </div>
+                        <div className="space-y-1">
+                          <h4 className="font-bold text-xl tracking-tight">{item.title}</h4>
+                          <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative flex justify-center">
+                  <div className="aspect-square w-full max-w-md rounded-full border-4 border-dashed border-primary/20 animate-[spin_60s_linear_infinite] absolute inset-0" />
+                  <div className="aspect-square w-full max-w-md rounded-[3rem] bg-background/40 backdrop-blur-xl border border-white/10 flex items-center justify-center relative z-10 overflow-hidden shadow-2xl">
+                    <Compass size={180} strokeWidth={1} className="text-primary/10" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Final CTA */}
-        <section id="cta" className="py-24 container mx-auto px-4">
-          <div className="rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground relative overflow-hidden">
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10 space-y-8 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold">Uncertain about your path?</h2>
-              <p className="text-lg text-primary-foreground/80 font-medium">
-                Let the light of Jyotish guide you. Join thousands of seekers who have found clarity and success through our Vedic consultations.
-              </p>
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="text-lg px-10 h-14 font-semibold hover:scale-105 transition-transform"
-                onClick={() => handleConsult("Emergency Consultation")}
-              >
-                Start your Journey
-              </Button>
-            </div>
-          </div>
-        </section>
-      </main>
+          {/* Final CTA */}
+          <CTASection 
+            title="Uncertain about your path?"
+            subtitle="Let the light of Jyotish guide you. Join thousands of seekers who have found clarity and success through our Vedic consultations."
+            buttonText="Start your Journey"
+            onClick={() => handleConsult("Emergency Consultation")}
+          />
+        </main>
+      </BeamsBackground>
 
-      <footer className="border-t border-white/10 bg-background py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold">Pujari</h1>
-              <p className="text-sm text-muted-foreground">
-                Illuminating paths with Vedic Wisdom.
-              </p>
-            </div>
-            
-            {[
-              { title: "Platform", links: ["Services", "Pujaris", "About"] },
-              { title: "Legal", links: ["Terms", "Privacy", "Cookies"] },
-              { title: "Social", links: ["Twitter", "Instagram", "LinkedIn"] }
-            ].map((col, i) => (
-              <div key={i}>
-                <h4 className="font-semibold mb-4">{col.title}</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <Link href="#" className="hover:text-primary transition-colors">{link}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-white/5 pt-8 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Pujari. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

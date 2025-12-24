@@ -9,6 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import BeamsBackground from "@/components/kokonutui/beams-background";
 import LiquidGlassCard from "@/components/kokonutui/liquid-glass-card";
 import ShapeLandingHero from "@/components/kokonutui/shape-landing-hero";
+import Footer from "@/components/Footer";
+import SectionHeading from "@/components/SectionHeading";
+import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
@@ -41,7 +44,7 @@ export default function Home() {
                     <p className="font-medium">Trusted by 10,000+ families</p>
                   </div>
                 </div>
-                <div className="relative">
+                <div className="relative" id="waitlist">
                   <SearchWidget />
                 </div>
               </div>
@@ -60,15 +63,11 @@ export default function Home() {
 
           {/* Services Grid */}
           <section id="services" className="py-40 container mx-auto px-4 relative">
-            <div className="text-center mb-24 space-y-6">
-              <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary py-1 px-4 text-sm font-medium">
-                Divine Path
-              </Badge>
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">Services for Every Milestone</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Ancient wisdom of the Vedas, delivered with modern precision.
-              </p>
-            </div>
+            <SectionHeading 
+              badge="Divine Path"
+              title="Services for Every Milestone"
+              subtitle="Ancient wisdom of the Vedas, delivered with modern precision."
+            />
             
             <div className="grid lg:grid-cols-3 gap-8">
               {[
@@ -138,10 +137,12 @@ export default function Home() {
           </section>
 
           {/* Trust Section */}
-          <section className="py-32 bg-primary/5 relative overflow-hidden">
+          <section className="py-40 bg-primary/5 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-            <div className="container mx-auto px-4 relative z-10 text-center space-y-16">
-              <h2 className="text-4xl font-bold">Why the Wise Choose Pujari</h2>
+            <div className="container mx-auto px-4 relative z-10 space-y-24">
+              <SectionHeading 
+                title="Why the Wise Choose Pujari"
+              />
               <div className="grid md:grid-cols-3 gap-12">
                 {[
                   { title: "Verified Lineage", desc: "Every Pujari is screened for authentic education and conduct." },
@@ -157,44 +158,19 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          {/* Final CTA */}
+          <CTASection 
+            title="Experience the Divine."
+            subtitle="Connect with verified Vedic experts for authentic rituals, sanskaras, and astrological guidance."
+            buttonText="Join the Waitlist"
+            className="pb-0"
+            href="#waitlist"
+          />
         </main>
       </BeamsBackground>
 
-      <footer className="border-t border-white/10 bg-background py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-4">
-              <h1 className="text-2xl font-bold">Pujari</h1>
-              <p className="text-sm text-muted-foreground">
-                Connecting you with the Sacred.
-                <br />
-                The matching platform for rituals.
-              </p>
-            </div>
-            
-            {[
-              { title: "Platform", links: ["Services", "Monks", "About"] },
-              { title: "Legal", links: ["Terms", "Privacy", "Cookies"] },
-              { title: "Social", links: ["Twitter", "Instagram", "LinkedIn"] }
-            ].map((col, i) => (
-              <div key={i}>
-                <h4 className="font-semibold mb-4">{col.title}</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <Link href="#" className="hover:text-primary transition-colors">{link}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          
-          <div className="border-t border-white/5 pt-8 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Pujari. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

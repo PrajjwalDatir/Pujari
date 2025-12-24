@@ -37,17 +37,16 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/pujaris" prefetch={false}>
-            <Button 
-              variant={pathname === "/pujaris" ? "default" : "ghost"}
-              className={cn(
-                "hidden md:inline-flex",
-                pathname !== "/pujaris" && "text-primary hover:text-primary/90 hover:bg-primary/10"
-              )}
-            >
-              For Pujaris
-            </Button>
-          </Link>
+          {pathname !== "/pujaris" && (
+            <Link href="/pujaris" prefetch={false}>
+              <Button 
+                variant="ghost"
+                className="hidden md:inline-flex text-primary hover:text-primary/90 hover:bg-primary/10"
+              >
+                For Pujaris
+              </Button>
+            </Link>
+          )}
           <MobileNav />
         </div>
       </div>
