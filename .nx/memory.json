@@ -1,0 +1,22 @@
+{
+  "project": "Pujari",
+  "mission": "The matching platform for rituals. Connecting common people with the right Pujari.",
+  "stage": "idea",
+  "core_features": [
+    "Pujari Matching",
+    "Ritual Booking",
+    "Vedic Services",
+    "Community Verified"
+  ],
+  "architecture_decisions": {
+    "rendering": "Client Components",
+    "styling": "CSS Modules",
+    "state": "React Context + LocalStorage",
+    "stack": [
+      "Next.js",
+      "Supabase",
+      "Vercel"
+    ]
+  },
+  "current_phase": "Active"
+}
