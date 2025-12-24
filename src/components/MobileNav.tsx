@@ -50,7 +50,7 @@ export default function MobileNav() {
           ))}
           <div className="border-t border-border pt-4 mt-4">
             <SheetClose asChild>
-              <Link href="/pujaris" onClick={() => setOpen(false)}>
+              <Link href="/pujaris" onClick={() => setOpen(false)} prefetch={false}>
                 <Button className="w-full" variant="default">
                   For Pujaris
                 </Button>

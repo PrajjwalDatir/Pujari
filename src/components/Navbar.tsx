@@ -37,7 +37,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/pujaris">
+          <Link href="/pujaris" prefetch={false}>
             <Button 
               variant={pathname === "/pujaris" ? "default" : "ghost"}
               className={cn(
