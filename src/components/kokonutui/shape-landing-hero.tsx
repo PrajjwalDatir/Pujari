@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ShapeLandingHeroProps {
   title: React.ReactNode;
-  subtitle: string;
-  badge: string;
+  subtitle: React.ReactNode;
+
   className?: string;
   children?: React.ReactNode;
   align?: "center" | "left";
@@ -20,22 +20,26 @@ function Shape({ className, delay, initialX, initialY, rotate }: any) {
     <motion.div
       initial={{ x: initialX, y: initialY, rotate: rotate, opacity: 0 }}
       animate={{ 
-        y: [initialY, initialY + 20, initialY],
-        opacity: [0, 0.5, 0.2]
+        y: [initialY, initialY - 30, initialY + 20, initialY],
+        rotate: [rotate, rotate + 15, rotate - 10, rotate],
+        scale: [1, 1.1, 0.95, 1],
+        opacity: [0.3, 0.6, 0.4, 0.3]
       }}
       transition={{
-        y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: delay },
-        opacity: { duration: 2, delay: delay }
+        duration: 15, // Slow, ambient movement
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: delay,
+        times: [0, 0.33, 0.66, 1] // Smooth keyframe distribution
       }}
       className={cn("absolute rounded-full blur-3xl -z-10", className)}
     />
   );
 }
-
 export default function ShapeLandingHero({
   title,
   subtitle,
-  badge,
+
   className,
   children,
   align = "center"
@@ -50,35 +54,21 @@ export default function ShapeLandingHero({
         "container relative mx-auto px-4 z-10 space-y-8",
         align === "center" ? "text-center" : "text-left"
       )}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary py-1 px-4 text-sm mb-6 backdrop-blur-md">
-            {badge}
-          </Badge>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
-            {title}
-          </h1>
-          
-          <p className={cn(
-            "text-xl md:text-2xl text-muted-foreground leading-relaxed",
-            align === "center" ? "mx-auto max-w-3xl" : "max-w-3xl mr-auto"
-          )}>
-            {subtitle}
-          </p>
-        </motion.div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] mb-6">
+          {title}
+        </h1>
+        
+        <div className={cn(
+          "text-lg md:text-xl text-muted-foreground leading-relaxed",
+          align === "center" ? "mx-auto max-w-2xl" : "max-w-2xl mr-auto"
+        )}>
+          {subtitle}
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="pt-8"
-        >
+        <div className="pt-8">
           {children}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

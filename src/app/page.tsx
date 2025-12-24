@@ -2,10 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Flame, Flower2, ScrollText, CheckCircle2, ArrowRight } from "lucide-react";
 import SearchWidget from "@/components/SearchWidget";
-import MobileNav from "@/components/MobileNav";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import BeamsBackground from "@/components/kokonutui/beams-background";
 import LiquidGlassCard from "@/components/kokonutui/liquid-glass-card";
 import ShapeLandingHero from "@/components/kokonutui/shape-landing-hero";
@@ -20,7 +18,6 @@ export default function Home() {
         <main className="flex-1">
           {/* Hero Section */}
           <ShapeLandingHero
-            badge="Legacy of Vedic Wisdom"
             title={<>Connect with the <span className="text-primary italic">Sacred</span>.</>}
             subtitle="A bridge between ancient tradition and the modern seeker. Find and book verified Acharyas for authentic ceremonies, Sanskaras, and Homas."
             align="left"
@@ -65,7 +62,6 @@ export default function Home() {
           {/* Services Grid */}
           <section id="services" className="py-20 container mx-auto px-4 relative">
             <SectionHeading 
-              badge="Divine Path"
               title="Services for Every Milestone"
               subtitle="Ancient wisdom of the Vedas, delivered with modern precision."
             />
@@ -98,7 +94,7 @@ export default function Home() {
                   href: "/astrology"
                 }
               ].map((service, i) => (
-                <LiquidGlassCard key={i} className="scroll-mt-24">
+                <LiquidGlassCard key={i} className="scroll-mt-24 h-full flex flex-col">
                   <div className="mb-8 p-5 rounded-3xl bg-primary/10 text-primary w-fit">
                     {service.icon}
                   </div>
@@ -110,7 +106,7 @@ export default function Home() {
                     {service.desc}
                   </p>
                   
-                  <div className="space-y-4 pt-8 border-t border-white/10">
+                  <div className="space-y-4 pt-8 border-t border-white/10 mt-auto">
                     {service.features.map((feat, idx) => (
                       <div key={idx} className="flex items-center gap-3 text-sm font-medium text-muted-foreground/80">
                         <div className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -150,7 +146,7 @@ export default function Home() {
                   { title: "Digital First", desc: "Seamless booking, video updates, and blessed prasad delivery." },
                   { title: "Complete Transparency", desc: "Fixed dakshina. No hidden costs. Complete clarity." }
                 ].map((item, i) => (
-                  <div key={i} className="p-8 rounded-3xl bg-background/50 backdrop-blur-md border border-white/10 space-y-4 text-left">
+                  <div key={i} className="p-8 rounded-3xl bg-background/50 backdrop-blur-md border border-white/10 space-y-4 text-left h-full">
                     <CheckCircle2 className="h-8 w-8 text-primary" />
                     <h3 className="font-bold text-xl">{item.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{item.desc}</p>

@@ -1,8 +1,8 @@
-import { Badge } from "@/components/ui/badge";
+
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
-  badge?: string;
+
   title: string | React.ReactNode;
   subtitle?: string;
   className?: string;
@@ -10,7 +10,7 @@ interface SectionHeadingProps {
 }
 
 export default function SectionHeading({ 
-  badge, 
+
   title, 
   subtitle, 
   className, 
@@ -22,17 +22,13 @@ export default function SectionHeading({
       align === "center" ? "text-center" : "text-left",
       className
     )}>
-      {badge && (
-        <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary py-1 px-4 font-medium tracking-wide">
-          {badge}
-        </Badge>
-      )}
-      <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
+
+      <h2 className="text-3xl md:text-5xl font-bold tracking-tighter leading-tight">
         {title}
       </h2>
       {subtitle && (
         <p className={cn(
-          "text-xl text-muted-foreground leading-relaxed max-w-2xl",
+          "text-lg text-muted-foreground leading-relaxed max-w-2xl",
           align === "center" && "mx-auto"
         )}>
           {subtitle}

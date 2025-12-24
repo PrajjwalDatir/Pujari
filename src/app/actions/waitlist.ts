@@ -5,7 +5,7 @@ import { resend } from "@/lib/resend";
 import { z } from "zod";
 
 const waitlistSchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
   lookingFor: z.string(),
   ritualType: z.string(),
   location: z.string(),
@@ -28,7 +28,7 @@ export async function joinWaitlistAction(formData: z.infer<typeof waitlistSchema
     // 2. Send Confirmation Email via Resend
     // Note: Using 'onboarding@resend.dev' as the sender for free tier testing
     const { error: resendError } = await resend.emails.send({
-      from: 'Pujari <onboarding@resend.dev>',
+      from: 'Pujari <mail.prajj.in>',
       to: [formData.email],
       subject: 'You are on the Sacred Waitlist! 🙏',
       html: `

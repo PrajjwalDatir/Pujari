@@ -12,7 +12,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Icon } from "@iconify/react";
-import { Badge } from "@/components/ui/badge";
+
 import { toast } from "sonner";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -68,7 +68,7 @@ export default function AstrologyClient() {
         <main className="flex-1">
           {/* Astrology Hero */}
           <ShapeLandingHero
-            badge="Navigating the Stars since the Vedic Era"
+
             title={<>Master your <span className="text-primary italic">Karma</span>.<br />Follow your <span className="text-primary italic">Dharma</span>.</>}
             subtitle="Jyotish is the 'Eye of the Veda.' Connect with legacy-holding Vedic Astrologers to illuminate your path through precise cosmic calculations."
           >
@@ -97,7 +97,7 @@ export default function AstrologyClient() {
           <section className="py-20 relative">
             <div className="container mx-auto px-4">
               <SectionHeading 
-                badge="Precision Jyotish"
+
                 title="Specialized Consultations"
                 subtitle="Precision-based insights for life's most critical decisions."
               />
@@ -111,7 +111,7 @@ export default function AstrologyClient() {
                           {service.icon}
                         </div>
                         <h3 className="text-2xl font-bold tracking-tight text-center">{service.title}</h3>
-                        <Badge variant="secondary" className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-primary mx-auto">Vedic Standard</Badge>
+          
                       </div>
                       <div className="sm:col-span-3 p-10 space-y-8 flex flex-col">
                         <p className="text-lg text-muted-foreground leading-relaxed flex-1">
@@ -148,7 +148,7 @@ export default function AstrologyClient() {
               <div className="grid lg:grid-cols-2 gap-20 items-center">
                 <div className="space-y-12">
                   <SectionHeading 
-                    badge="Science of Spirit"
+
                     title={<>Ancient Math.<br />Modern Clarity.</>}
                     subtitle="We don't practice generic horoscopes. Our experts use Parashari and Jaimini systems to calculate planetary placements to the exact degree."
                     align="left"

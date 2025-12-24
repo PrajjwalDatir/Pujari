@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   ArrowRight
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+
 import { toast } from "sonner";
 import Link from "next/link";
 import BeamsBackground from "@/components/kokonutui/beams-background";
@@ -49,7 +49,7 @@ export default function PujarisClient() {
         <main className="flex-1">
           {/* Hero Section */}
           <ShapeLandingHero
-            badge="Architecting the Future of Traditions"
+
             title={<>Expand your <span className="text-primary italic">Kshetra</span>.</>}
             subtitle="The modern platform for Vedic experts. Manage your schedule, receive digital dakshina, and reach a global community of seekers."
           >
@@ -78,7 +78,7 @@ export default function PujarisClient() {
             <div className="container mx-auto px-4 relative z-10">
               <div className="flex flex-col items-center text-center mb-16 gap-6">
                 <div className="space-y-4">
-                  <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary">Live Pulse</Badge>
+
                   <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Ritual Demand Network</h2>
                   <p className="text-xl text-muted-foreground">Devotees near you are looking for verified experts right now.</p>
                 </div>
@@ -92,9 +92,7 @@ export default function PujarisClient() {
                 {liveRequests.map((request, i) => (
                   <LiquidGlassCard key={i} className="p-1">
                     <div className="flex justify-between items-start mb-6">
-                      <Badge variant={request.status === 'Urgent' ? 'destructive' : 'secondary'} className="text-[10px] uppercase tracking-widest font-bold">
-                        {request.status}
-                      </Badge>
+
                       <span className="text-[10px] font-bold text-muted-foreground/60 uppercase">{request.time}</span>
                     </div>
                     <h3 className="text-2xl font-bold mb-2">{request.ritual}</h3>
@@ -121,7 +119,7 @@ export default function PujarisClient() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
             <div className="container mx-auto px-4 relative z-10">
               <SectionHeading 
-                badge="Pro Acharya Benefits"
+
                 title="Focus on the Sacred."
                 subtitle="We handle the logistics and technology, empowering your spiritual practice."
               />
