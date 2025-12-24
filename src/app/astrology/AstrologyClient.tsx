@@ -110,8 +110,8 @@ export default function AstrologyClient() {
                         <div className="p-5 rounded-3xl bg-white/10 text-primary">
                           {service.icon}
                         </div>
-                        <h3 className="text-2xl font-bold tracking-tight">{service.title}</h3>
-                        <Badge variant="secondary" className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-primary">Vedic Standard</Badge>
+                        <h3 className="text-2xl font-bold tracking-tight text-center">{service.title}</h3>
+                        <Badge variant="secondary" className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-primary mx-auto">Vedic Standard</Badge>
                       </div>
                       <div className="sm:col-span-3 p-10 space-y-8 flex flex-col">
                         <p className="text-lg text-muted-foreground leading-relaxed flex-1">

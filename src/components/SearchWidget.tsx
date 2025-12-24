@@ -116,8 +116,8 @@ export default function SearchWidget() {
               exit={{ x: -100, opacity: 0 }}
               className="flex-1 flex flex-col"
             >
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-2">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold flex items-center justify-center gap-2">
                   <Sparkles className="text-primary w-5 h-5" />
                   Find Global Pujari
                 </CardTitle>
@@ -127,8 +127,8 @@ export default function SearchWidget() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={searchForm.handleSubmit(onSearch)} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="lookingFor">I am looking for a</Label>
+                  <div className="space-y-2 text-center">
+                    <Label htmlFor="lookingFor" className="text-center block">I am looking for a</Label>
                     <Select
                       onValueChange={(val) =>
                         searchForm.setValue("lookingFor", val as "pujari" | "astrologer")
@@ -145,8 +145,8 @@ export default function SearchWidget() {
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="ritualType">Ritual Type</Label>
+                  <div className="space-y-2 text-center">
+                    <Label htmlFor="ritualType" className="text-center block">Ritual Type</Label>
                     <Input
                       id="ritualType"
                       placeholder="e.g. Satyanarayan Puja, Griha Pravesh"
@@ -160,8 +160,8 @@ export default function SearchWidget() {
                     )}
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="location">Location</Label>
+                  <div className="space-y-2 text-center">
+                    <Label htmlFor="location" className="text-center block">Location</Label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                       <Input
@@ -204,7 +204,7 @@ export default function SearchWidget() {
               exit={{ x: -100, opacity: 0 }}
               className="flex-1 flex flex-col"
             >
-              <CardHeader>
+              <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold text-primary">Priority Waitlist</CardTitle>
                 <CardDescription>
                   We are expanding! Be the first to know when verified Pujaris are available for <strong>{searchData?.ritualType}</strong> in <strong>{searchData?.location}</strong>.
@@ -218,8 +218,8 @@ export default function SearchWidget() {
                 </div>
                 
                 <form onSubmit={waitlistForm.handleSubmit(onJoinWaitlist)} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                  <div className="space-y-2 text-center">
+                    <Label htmlFor="email" className="text-center block">Email Address</Label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                       <Input

@@ -26,14 +26,14 @@ export default function Home() {
           >
             <div className="max-w-4xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="hidden lg:flex flex-col gap-6 text-left">
+                <div className="hidden lg:flex flex-col gap-6 text-center lg:text-left">
                   <div className="space-y-4">
                     <h3 className="text-2xl font-semibold italic text-primary">Digitizing Tradition</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       We bring the rigor of Vedic scriptures to your doorstep with a seamless digital experience. 
                     </p>
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground">
                     <div className="flex -space-x-3">
                       {[1, 2, 3].map((i) => (
                         <div key={i} className="h-10 w-10 rounded-full border-2 border-background overflow-hidden relative">

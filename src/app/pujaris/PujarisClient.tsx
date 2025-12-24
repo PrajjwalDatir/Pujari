@@ -76,8 +76,8 @@ export default function PujarisClient() {
           {/* Live Demand Section */}
           <section className="py-20 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div className="space-y-4 text-left">
+              <div className="flex flex-col items-center text-center mb-16 gap-6">
+                <div className="space-y-4">
                   <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary">Live Pulse</Badge>
                   <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Ritual Demand Network</h2>
                   <p className="text-xl text-muted-foreground">Devotees near you are looking for verified experts right now.</p>
