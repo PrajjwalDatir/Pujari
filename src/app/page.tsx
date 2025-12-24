@@ -18,9 +18,9 @@ export default function Home() {
           <div className="container relative mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left space-y-6">
-                <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary backdrop-blur-sm">
-                  <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-                  Verified Vedic Network
+                <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary backdrop-blur-sm">
+                  <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+                  Legacy of Vedic Wisdom
                 </div>
                 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
@@ -28,7 +28,7 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  The matching platform for rituals. Find and book verified Pujaris for authentic Vedic ceremonies, Sanskaras, and Homas.
+                  A bridge between ancient tradition and the modern seeker. Find and book verified Acharyas for authentic ceremonies, Sanskaras, and Homas.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -73,8 +73,8 @@ export default function Home() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
           
           <div className="text-center mb-20 space-y-6">
-            <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary">
-              Sacred Ecosystem
+            <Badge variant="outline" className="border-primary/20 bg-primary/5 text-primary py-1 px-4">
+              Divine Path
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Divine Services for Every Milestone</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
