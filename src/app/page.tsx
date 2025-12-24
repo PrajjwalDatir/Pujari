@@ -34,13 +34,13 @@ export default function Home() {
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex -space-x-2">
                       <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
-                        <Image src="/avatar-1.png" alt="Trusted User" fill className="object-cover" />
+                        <Image src="/avatar-1.png" alt="Trusted User" fill className="object-cover" priority />
                       </div>
                       <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
-                        <Image src="/avatar-2.png" alt="Trusted User" fill className="object-cover" />
+                        <Image src="/avatar-2.png" alt="Trusted User" fill className="object-cover" priority />
                       </div>
                       <div className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative">
-                        <Image src="/avatar-3.png" alt="Trusted User" fill className="object-cover" />
+                        <Image src="/avatar-3.png" alt="Trusted User" fill className="object-cover" priority />
                       </div>
                     </div>
                     <p>Trusted by 10,000+ families</p>

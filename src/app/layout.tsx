@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     title: "Pujari | The Ritual Matching Platform",
     description: "Connect with verified Pujaris for authentic Vedic ceremonies.",
   },
+  metadataBase: new URL('https://pujari.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: "/icon.svg",
     apple: "/icon.svg",
