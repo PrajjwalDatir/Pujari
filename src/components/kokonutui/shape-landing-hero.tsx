@@ -12,6 +12,7 @@ interface ShapeLandingHeroProps {
   badge: string;
   className?: string;
   children?: React.ReactNode;
+  align?: "center" | "left";
 }
 
 function Shape({ className, delay, initialX, initialY, rotate }: any) {
@@ -36,7 +37,8 @@ export default function ShapeLandingHero({
   subtitle,
   badge,
   className,
-  children
+  children,
+  align = "center"
 }: ShapeLandingHeroProps) {
   return (
     <section className={cn("relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20", className)}>
@@ -44,7 +46,10 @@ export default function ShapeLandingHero({
       <Shape className="w-96 h-96 bg-orange-500/10 bottom-1/4 right-1/4" delay={1} initialX={100} initialY={0} rotate={-10} />
       <Shape className="w-48 h-48 bg-primary/10 top-1/2 right-1/3" delay={2} initialX={0} initialY={100} rotate={45} />
 
-      <div className="container relative mx-auto px-4 z-10 text-center space-y-8">
+      <div className={cn(
+        "container relative mx-auto px-4 z-10 space-y-8",
+        align === "center" ? "text-center" : "text-left"
+      )}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +63,10 @@ export default function ShapeLandingHero({
             {title}
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className={cn(
+            "text-xl md:text-2xl text-muted-foreground leading-relaxed",
+            align === "center" ? "mx-auto max-w-3xl" : "max-w-3xl mr-auto"
+          )}>
             {subtitle}
           </p>
         </motion.div>

@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, MapPin, Sparkles, Mail, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Search, MapPin, Mail, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabase";
 import { joinWaitlistAction } from "@/app/actions/waitlist";
@@ -118,7 +119,7 @@ export default function SearchWidget() {
             >
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-bold flex items-center justify-center gap-2">
-                  <Sparkles className="text-primary w-5 h-5" />
+                  <Icon icon="ph:sparkle-duotone" className="text-primary w-5 h-5" />
                   Find Global Pujari
                 </CardTitle>
                 <CardDescription>

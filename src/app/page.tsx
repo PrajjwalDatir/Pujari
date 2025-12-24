@@ -23,6 +23,7 @@ export default function Home() {
             badge="Legacy of Vedic Wisdom"
             title={<>Connect with the <span className="text-primary italic">Sacred</span>.</>}
             subtitle="A bridge between ancient tradition and the modern seeker. Find and book verified Acharyas for authentic ceremonies, Sanskaras, and Homas."
+            align="left"
           >
             <div className="max-w-4xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 items-center">

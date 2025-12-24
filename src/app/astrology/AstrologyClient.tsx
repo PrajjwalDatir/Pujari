@@ -9,9 +9,9 @@ import {
   History,
   ShieldCheck,
   CheckCircle2,
-  ArrowRight,
-  Zap
+  ArrowRight
 } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import Link from "next/link";
@@ -156,13 +156,25 @@ export default function AstrologyClient() {
                   />
                   <div className="space-y-8">
                     {[
-                      { title: "Time-Sensitive", desc: "Calculations based on the exact second of birth and geographical coordinates." },
-                      { title: "Remedial-Led", desc: "We don't just predict; we provide actionable solutions through Vedic rituals." },
-                      { title: "Verified Lineage", desc: "Consult only with Acharyas from recognized Gurukuls and traditions." }
+                      { 
+                        title: "Time-Sensitive", 
+                        desc: "Calculations based on the exact second of birth and geographical coordinates.",
+                        icon: <Icon icon="ph:clock-afternoon-duotone" className="w-6 h-6" />
+                      },
+                      { 
+                        title: "Remedial-Led", 
+                        desc: "We don't just predict; we provide actionable solutions through Vedic rituals.",
+                        icon: <Icon icon="ph:plant-duotone" className="w-6 h-6" />
+                      },
+                      { 
+                        title: "Verified Lineage", 
+                        desc: "Consult only with Acharyas from recognized Gurukuls and traditions.",
+                        icon: <Icon icon="ph:scroll-duotone" className="w-6 h-6" />
+                      }
                     ].map((item, i) => (
                       <div key={i} className="flex gap-6 items-start">
                         <div className="h-12 w-12 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                          <Zap size={24} />
+                          {item.icon}
                         </div>
                         <div className="space-y-1">
                           <h4 className="font-bold text-xl tracking-tight">{item.title}</h4>
