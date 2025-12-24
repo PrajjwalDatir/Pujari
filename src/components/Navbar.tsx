@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Rituals", href: "/#rituals" },
-  { label: "Astrology", href: "/#astrology" },
+  { label: "Astrology", href: "/astrology" },
 ];
 
 export default function Navbar() {
